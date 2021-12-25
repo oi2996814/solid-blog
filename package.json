@@ -1,20 +1,30 @@
 {
-  "name": "vite-template-solid",
+  "name": "solid-blog",
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "build": "pnpm build:css && vite build",
+    "build:css": "postcss src/tailwind.scss -o src/main.css --env production",
+    "dev": "concurrently \"vite\" \"pnpm dev:css\"",
+    "dev:css": "postcss src/tailwind.scss -o src/main.css --watch",
+    "serve": "vite preview",
+    "start": "vite"
   },
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "concurrently": "^6.5.1",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.0.2",
+    "postcss-nesting": "^10.1.0",
+    "tailwindcss": "^3.0.7",
     "typescript": "^4.5.4",
     "vite": "^2.7.6",
     "vite-plugin-solid": "^2.1.4"
   },
   "dependencies": {
+    "@stitches/core": "^1.2.6",
     "solid-js": "^1.2.6"
   }
 }
