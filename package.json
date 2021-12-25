@@ -7,7 +7,6 @@
     "build:css": "postcss src/tailwind.scss -o src/main.css --env production",
     "dev": "concurrently \"vite\" \"pnpm dev:css\"",
     "dev:css": "postcss src/tailwind.scss -o src/main.css --watch",
-    "preinstall": "npx only-allow pnpm",
     "serve": "vite preview",
     "start": "vite"
   },
