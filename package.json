@@ -7,6 +7,7 @@
     "build:css": "postcss src/tailwind.scss -o src/main.css --env production",
     "dev": "concurrently \"vite\" \"pnpm dev:css\"",
     "dev:css": "postcss src/tailwind.scss -o src/main.css --watch",
+    "preinstall": "npx only-allow pnpm",
     "serve": "vite preview",
     "start": "vite"
   },
@@ -14,6 +15,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.0",
     "concurrently": "^6.5.1",
+    "pnpm": "^6.24.3",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.2",
