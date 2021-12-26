@@ -1,6 +1,7 @@
 import { For, JSX, lazy } from 'solid-js'
 import { render } from 'solid-js/web'
 import {type RouteDefinition, Router, Link, useRoutes } from 'solid-app-router'
+import { Progress } from './components'
 
 
 const ROUTEDIR = 'routes'
@@ -42,9 +43,10 @@ const App: JSX.Element= () => {
       {/* app wrapper */}
       <main className="flex flex-col h-[400vh]">
         {/* nav bar wrapper */}
-        <div className="sticky top-0 flex items-center justify-center w-full py-4 bg-white">
+        <div className="sticky top-0 flex flex-col items-center justify-center w-full bg-white">
+          <Progress value={100} />
           {/* nav content wrapper */}
-          <nav className="flex justify-between w-full max-w-5xl mx-10">
+          <nav className="flex justify-between w-full max-w-5xl py-4 mx-10">
             {/* logo */}
             <div className="text-2xl font-black text-[#4b7db7]">Solid Blog</div>
             {/* navlinks wrapper */}
@@ -59,9 +61,9 @@ const App: JSX.Element= () => {
         </div>{/*-- nav bar wrapper */}
 
         {/* main wrapper */}
-        <main className="flex flex-col items-center justify-center w-full py-4">
+        <main className="flex flex-col items-center justify-center w-full py-4 mx-10 lg:mx-0">
           {/* content wrapper */}
-          <div className="flex w-full max-w-5xl mx-10">
+          <div className="flex w-full max-w-5xl">
             <Route />
           </div>{/*-- content wrapper */}
         </main>{/*-- main wrapper */}
