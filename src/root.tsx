@@ -76,6 +76,7 @@ const App: JSX.Element= () => {
   )
 }
 
+// @refresh reload
 render(
   () => (
     <Router>
