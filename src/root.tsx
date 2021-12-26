@@ -45,19 +45,22 @@ const App: JSX.Element= () => {
         {/* nav bar wrapper */}
         <div className="sticky top-0 flex flex-col items-center justify-center w-full bg-white">
           <Progress value={100} />
-          {/* nav content wrapper */}
-          <nav className="flex justify-between w-full max-w-5xl py-4 mx-10">
-            {/* logo */}
-            <div className="text-2xl font-black text-[#4b7db7]">Solid Blog</div>
-            {/* navlinks wrapper */}
-            <div className="flex items-center justify-center space-x-8">
-              <For each={routes} fallback={<div>Loading ...</div>}>
-                {({path}) => (
-                  <Link href={path} className='text-[#1a1a1a] font-semibold'>{pages.filter((e) => (e.path === path))[0]['text']}</Link>
-                )}
-              </For>
-            </div>{/*-- navlinks wrapper */}
-          </nav>{/* nav content wrapper */}
+          {/* nav inner wrapper */}
+          <div className="flex items-center justify-center w-full">
+            {/* nav content wrapper */}
+            <nav className="flex justify-between w-full max-w-5xl py-4 mx-10">
+              {/* logo */}
+              <div className="text-2xl font-black text-[#4b7db7]">Solid Blog</div>
+              {/* navlinks wrapper */}
+              <div className="flex items-center justify-center space-x-8">
+                <For each={routes} fallback={<div>Loading ...</div>}>
+                  {({path}) => (
+                    <Link href={path} className='text-[#1a1a1a] font-semibold'>{pages.filter((e) => (e.path === path))[0]['text']}</Link>
+                  )}
+                </For>
+              </div>{/*-- navlinks wrapper */}
+            </nav>{/* nav content wrapper */}
+          </div>{/* nav inner wrapper */}
         </div>{/*-- nav bar wrapper */}
 
         {/* main wrapper */}

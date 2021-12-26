@@ -16,7 +16,7 @@ export default function DemoPage(): JSX.Element {
   return (
     <div className="flex flex-col">
       <h1 className="text-5xl">DEMO PAGE</h1>
-      <div className="flex">
+      <div className="flex mt-10 space-x-10">
         <button className={button()}>Stiches Button</button>
         <button className="px-2 py-2 text-white bg-red-500 rounded-full">
           Tailwind Button
