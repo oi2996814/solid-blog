@@ -1,4 +1,4 @@
-import { For, JSX, lazy, mergeProps } from 'solid-js'
+import { For, JSX, lazy } from 'solid-js'
 import { render } from 'solid-js/web'
 import {type RouteDefinition, Router, Link, useRoutes } from 'solid-app-router'
 
@@ -40,19 +40,32 @@ const App: JSX.Element= () => {
   return (
     <>
       {/* app wrapper */}
-      <main className="flex flex-col">
+      <main className="flex flex-col h-[400vh]">
         {/* nav bar wrapper */}
-        <div className="w-full">
-          <nav className="max-w-5xl">
-            <For each={routes} fallback={<div>Loading ...</div>}>
-              {({path}, i) => (
-                <Link href={path}>{pages.filter((e) => (e.path === path))[0]['text']}</Link>
-              )}
-            </For>
-          </nav>
+        <div className="sticky top-0 flex items-center justify-center w-full py-4 bg-white">
+          {/* nav content wrapper */}
+          <nav className="flex justify-between w-full max-w-5xl mx-10">
+            {/* logo */}
+            <div className="text-2xl font-black text-[#4b7db7]">Solid Blog</div>
+            {/* navlinks wrapper */}
+            <div className="flex items-center justify-center space-x-8">
+              <For each={routes} fallback={<div>Loading ...</div>}>
+                {({path}) => (
+                  <Link href={path} className='text-[#1a1a1a] font-semibold'>{pages.filter((e) => (e.path === path))[0]['text']}</Link>
+                )}
+              </For>
+            </div>{/*-- navlinks wrapper */}
+          </nav>{/* nav content wrapper */}
         </div>{/*-- nav bar wrapper */}
 
-        <Route />
+        {/* main wrapper */}
+        <main className="flex flex-col items-center justify-center w-full py-4">
+          {/* content wrapper */}
+          <div className="flex w-full max-w-5xl mx-10">
+            <Route />
+          </div>{/*-- content wrapper */}
+        </main>{/*-- main wrapper */}
+
       </main>{/*-- app wrapper */}
     </>
   )
