@@ -1,4 +1,4 @@
-# Solid Blog
+<h1 align="center">Solid Blog</h1>
 
 <div align="center">
   <a href="https://github.com/solidjs/solid">
@@ -14,6 +14,8 @@
     <img src="https://img.shields.io/badge/TailwindCSS-3.0.7-38bdf7.svg?style=flat-square"/>
   </a>
 </div>
+
+<hr/>
 
 - styling
   - [Stiches](https://stitches.dev/)
