@@ -1,5 +1,5 @@
-import type { Component } from 'solid-js';
-import { css } from '@stitches/core';
+import type { Component } from 'solid-js'
+import { css } from '@stitches/core'
 
 const button = css({
   backgroundColor: 'gainsboro',
@@ -9,16 +9,17 @@ const button = css({
   '&:hover': {
     backgroundColor: 'lightgray',
   },
-});
+})
 
 const App: Component = () => {
   return (
     <>
-        <button className={button()}>Stiches Button</button>
-        <button className="bg-red-500 text-white rounded-full py-2 px-2">Tailwind Button</button>
+      <button className={button()}>Stiches Button</button>
+      <button className="px-2 py-2 text-white bg-red-500 rounded-full">
+        Tailwind Button
+      </button>
     </>
-    
-  );
-};
+  )
+}
 
-export default App;
+export default App
